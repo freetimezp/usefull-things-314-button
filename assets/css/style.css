@@ -9,3 +9,68 @@
 a {
     text-decoration: none;
 }
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center a {
+    display: inherit;
+    padding: 20px 35px;
+    color: #262626;
+    font-size: 30px;
+    background: transparent;
+    text-align: center;
+    line-height: 100%;
+    text-transform: uppercase;
+    border: 2px solid #262626;
+    transition: 0.5s;
+    transform: skew(15deg);
+}
+
+.center a::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 35px;
+    color: rgba(0, 0, 0, 0.2);
+    transform: skew(0deg);
+    transition: transform 0.5s ease;
+}
+
+.center a:hover {
+    background: rgba(79, 156, 255, 1);
+    color: #fff;
+}
+
+.center a:hover::before {
+    transform: translateY(5px) skew(0deg);
+    filter: blur(2px);
+}
+
+span:nth-child(1) {
+    position: absolute;
+    top: 14px;
+    left: -32px;
+    width: 30px;
+    height: 102.5%;
+    border: 2px solid #262626;
+    background: #efefef;
+    transform: skewY(-45deg);
+}
+
+span:nth-child(2) {
+    position: absolute;
+    bottom: -31px;
+    left: -17px;
+    width: 102%;
+    height: 30px;
+    border: 2px solid #262626;
+    background: #efefef;
+    transform: skewX(-45deg);
+    box-shadow: 0 40px 25px rgba(0, 0, 0, 0.2);
+}
